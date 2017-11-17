@@ -9,10 +9,13 @@ import { FooterComponent } from './footer/footer.component';
 import { ProductsComponent } from './products/products.component';
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductService } from './services/product.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 const routes:Routes = [
   { path:'', component: ProductsComponent},
-  { path:'details/:id', component: ProductDetailsComponent}
+  { path:'details/:id', component: ProductDetailsComponent},
+  { path:'error', component: PageNotFoundComponent},
+  { path: '**', redirectTo:'error'}
 ];
 
 @NgModule({
@@ -21,7 +24,8 @@ const routes:Routes = [
     HeaderComponent,
     FooterComponent,
     ProductsComponent,
-    ProductDetailsComponent
+    ProductDetailsComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -12,11 +12,11 @@ export class ProductService {
   constructor() { }
 
   getProducts(): Observable<Product[]> {
-    return Observable.of(PRODUCTS).delay(200);
+    return Observable.of(PRODUCTS);
   }
 
-  getProduct(id: number): Observable<Product>{
-    return Observable.of(PRODUCTS.filter(d => {d.id === id})[0]).delay(2000);
+  getProduct(id: number) {
+    return Observable.of(PRODUCTS.filter(d => { d.id === id })[0]);
   }
 
 }
