@@ -15,8 +15,33 @@ export class ProductService {
     return Observable.of(PRODUCTS);
   }
 
-  getProduct(id: number) {
-    return Observable.of(PRODUCTS.filter(d => { d.id === id })[0]);
+  getProduct(id: number): Observable<Product>  {
+    return Observable.of(PRODUCTS[id-1]);
   }
+
+  getByCategory(category: string): Observable<Product[]> {
+    return Observable.of(PRODUCTS.filter((product) => {
+      return product.category === category
+    }));
+  }
+  
+
+  getByRating(rating): Observable<Product[]> {
+    return Observable.of(PRODUCTS.filter((product) => {
+      return product.ratings >= rating
+    }));
+  }
+
+  getByPrice(type): Observable<Product[]> {
+    return Observable.of(PRODUCTS.sort((a,b) => {
+      if( type === 0){
+        return a.price - b.price;
+      }else if (type === 1) {
+        return a.price + b.price;
+      }
+    }));
+  }
+
+  
 
 }

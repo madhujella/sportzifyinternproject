@@ -1,6 +1,6 @@
-<div class="row mx-auto" >
+<div class="row" >
   <div *ngIf="products">
-  <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products,let i = index">
+  <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products">
     
      <div class="card" (click)="getDetails(product.id)" >
       <img class="img-responsive" src="{{product.img}}" width="300px" height="220px">
@@ -11,7 +11,7 @@
       
     </div> 
     </div>
-    <div [hidden]=products><fa name="cog" animation="spin"></fa></div>
+    <div [hidden]=products><h3>Wait...</h3></div>
     
   </div> 
   
