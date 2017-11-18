@@ -8,17 +8,6 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-  constructor(private router: Router) {}
+  constructor() {}
 
-  toCategory(category){
-    this.router.navigate(['filter', category]);
-  }
-  
-  toPrice(type) {
-    this.router.navigate(['price', type]);
-  }
-
-  toRatings(type) {
-    this.router.navigate(['ratings', type]);
-  }
 }

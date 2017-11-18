@@ -1,12 +1,22 @@
 <div class="row mx-auto" >
-  <div *ngIf="products">
-  <div class="col-md-4 col-sm-6 col-xs-12" *ngFor="let product of products,let i = index">
+  <div *ngIf="products" class="text-muted">
+  <div class="col-md-3 col-sm-6 col-xs-12" *ngFor="let product of products,let i = index">
     
-     <div class="card" (click)="getDetails(product.id)" >
-      <img class="img-responsive" src="{{product.img}}" width="300px" height="220px">
+     <div class="card cursor" style="margin:20px 0" (click)="getDetails(product.id)"  >
+      <img class="img-responsive text-center" src="{{product.img}}" alt="{{product.name}}" style="height: 220px; display: block;" >
       <div class="card-body">
-        <h3 class="card-title">{{product.name}} <span>{{product.price}}</span></h3>
-        <span class="card-text">{{product.ratings}}</span>
+        <div class="row">
+            <div class="col-xs-8">
+                <h5 class="card-title text-left">{{product.name | slice:0:19}}...</h5>
+              </div>
+              <div class="col-xs-4">
+                  <h5 class="text-right font-italic fa fa-rupee">{{product.price}}</h5>
+              </div>
+        </div>
+        
+        
+          
+        
       </div> 
       
     </div> 

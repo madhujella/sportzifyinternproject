@@ -25,4 +25,6 @@ export class ProductsComponent implements OnInit {
     this.router.navigate(["details", id]);
   }
 
+  
+
 }

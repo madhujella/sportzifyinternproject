@@ -1,16 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-import { Product } from '../shared/product-model';
+import { Product } from '../../shared/product-model';
 import { Router, ActivatedRoute, Params } from "@angular/router";
-import { ProductService } from '../services/product.service';
+import { ProductService } from '../../services/product.service';
 
 import 'rxjs/add/operator/switchMap';
 
 @Component({
-  selector: 'app-product-rating',
-  templateUrl: './product-rating.component.html',
-  styleUrls: ['./product-rating.component.css']
+  selector: 'app-product-price',
+  templateUrl: './product-price.component.html',
+  styleUrls: ['./product-price.component.css']
 })
-export class ProductRatingComponent implements OnInit {
+export class ProductPriceComponent implements OnInit {
 
   products: Product[];
 
@@ -18,7 +18,7 @@ export class ProductRatingComponent implements OnInit {
 
   ngOnInit() {
     this.route.params.switchMap((params: Params) => {
-      return this.productService.getByRating(+params['rating']);
+      return this.productService.getByPrice(+params['sort']);
     }).subscribe((products) => {
       this.products = products;
     });
@@ -27,5 +27,4 @@ export class ProductRatingComponent implements OnInit {
   getDetails(id){
     this.router.navigate(["details", id]);
   }
-
 }

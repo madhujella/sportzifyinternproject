@@ -1,24 +1,10 @@
 <app-header></app-header>
 <div class="container">
   <div class="row">
-    <div class="col-lg-2 col-sm-12">
-      <ul>
-        <li><a (click)="toCategory('tennis')">tennis</a></li>
-        <li><a (click)="toCategory('badminton')">badminton</a></li>
-        <li><a (click)="toCategory('cycling')">cycling</a></li>
-      </ul>
-      <ul>
-        <li><a (click)="toPrice(0)">Low - High</a></li>
-        <li><a (click)="toPrice(1)">High - Low</a></li>
-      </ul>
-      <ul>
-        <li><a (click)="toRatings(1)">Ratings: 1+</a></li>
-        <li><a (click)="toRatings(2)">Ratings: 2+</a></li>
-        <li><a (click)="toRatings(3)">Ratings: 3+</a></li>
-        <li><a (click)="toRatings(4)">Ratings: 4+</a></li>
-      </ul>
+    <div class="col-sm-12">
+      <app-sidebar></app-sidebar>
     </div>
-    <div class="col-lg-10 col-sm-12">
+    <div class="col-sm-12">
         <router-outlet></router-outlet>
     </div>
   </div>
